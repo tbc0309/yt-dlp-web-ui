@@ -26,7 +26,7 @@ const ExtraDownloadOptions: React.FC = () => {
         autoHighlight
         defaultValue={
           customTemplates
-            .filter(({ id, name }) => id === "0" || name === "default")
+            .filter(({ id, name }) => id === "0" || name.toLowerCase() === "default")
             .map(({ name, content }) => ({ label: name, content }))
             .at(0)
         }

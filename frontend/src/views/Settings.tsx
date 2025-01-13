@@ -180,7 +180,6 @@ export default function Settings() {
           </Grid>
           <Grid item xs={12} md={12}>
             <TextField
-              disabled={reverseProxy}
               fullWidth
               label={i18n.t('appTitle')}
               defaultValue={appTitle}

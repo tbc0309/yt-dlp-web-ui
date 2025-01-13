@@ -1,7 +1,6 @@
 import { ThemeProvider } from '@emotion/react'
-import ArchiveIcon from '@mui/icons-material/Archive'
-import CloudDownloadIcon from '@mui/icons-material/CloudDownload'
 import ChevronLeft from '@mui/icons-material/ChevronLeft'
+import CloudDownloadIcon from '@mui/icons-material/CloudDownload'
 import Dashboard from '@mui/icons-material/Dashboard'
 import LiveTvIcon from '@mui/icons-material/LiveTv'
 import Menu from '@mui/icons-material/Menu'
@@ -17,7 +16,8 @@ import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import { grey, red } from '@mui/material/colors'
+import { grey } from '@mui/material/colors'
+import { useAtomValue } from 'jotai'
 import { useMemo, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { settingsState } from './atoms/settings'
@@ -29,7 +29,6 @@ import SocketSubscriber from './components/SocketSubscriber'
 import ThemeToggler from './components/ThemeToggler'
 import { useI18n } from './hooks/useI18n'
 import Toaster from './providers/ToasterProvider'
-import { useAtomValue } from 'jotai'
 import { getAccentValue } from './utils'
 
 export default function Layout() {
@@ -58,6 +57,7 @@ export default function Layout() {
 
   return (
     <ThemeProvider theme={theme}>
+      <title>{settings.appTitle}</title>
       <SocketSubscriber />
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
